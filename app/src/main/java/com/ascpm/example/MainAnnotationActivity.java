@@ -1,5 +1,6 @@
 package com.ascpm.example;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -33,9 +34,15 @@ public class MainAnnotationActivity extends AppCompatActivity {
     @ViewById(R.id.editText)
     EditText editText;
 
-    @Click({R.id.button01, R.id.button02, R.id.button03, R.id.button04})
+    @Click({R.id.button01, R.id.button03, R.id.button04})
     void buttonClick(View v) {
         this.textView.setText(Button.class.cast(v).getText().toString());
+    }
+
+    @Click(R.id.button02)
+    void webViewButtonClick() {
+        startActivity(new Intent(getApplicationContext(), WebViewAnnotationActivity_.class));
+        finish();
     }
 
     @Click(R.id.textView)

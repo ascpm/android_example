@@ -1,5 +1,6 @@
 package com.ascpm.example;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -30,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void bindEvent() {
         this.button01.setOnClickListener(v -> textView.setText(Button.class.cast(v).getText().toString()));
-        this.button02.setOnClickListener(v -> textView.setText(Button.class.cast(v).getText().toString()));
+        // this.button02.setOnClickListener(v -> textView.setText(Button.class.cast(v).getText().toString()));
+        this.button02.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), WebViewActivity.class));
+            finish();
+        });
         this.button03.setOnClickListener(v -> textView.setText(Button.class.cast(v).getText().toString()));
         this.button04.setOnClickListener(v -> textView.setText(Button.class.cast(v).getText().toString()));
 
